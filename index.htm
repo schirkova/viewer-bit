@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/d3.v3.min.js"></script>
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    
+    <script src="web.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body  ng-app ng-csp ng-controller="TodoCtrl">
+  <br>
+  <div id="all">
+
+	
+		<div>
+		 {{j3mContent}}
+		  </div>
+		  <br>
+
+		<div id="chart"></div>
+	
+   </div>
+<script type="text/javascript">
+//standard j3m JSON
+var _jsonData = {"data":{"exif":{"exposure":"0.0093","orientation":1,"flash":-1,"model":"GT-N7100","iso":"100","location":[40.71162796020508,-73.96484375],"width":1280,"whiteBalance":0,"aperture":"2.8","focalLength":-1,"timestamp":"2013:07:23 15:32:41","duration":0,"height":960,"make":"SAMSUNG"},"userAppendedData":[{"timestamp":1374608233371,"id":"4caa5df97dca6f9287425c43c430d23a","associatedForms":[{"path":"/forms/493dde68c49e6b99556186a3e776d705.xml","id":"e09a0245560c99569564d7271b8319b2","answerData":{"iW_free_text":"like a bawse"},"namespace":"iWitness Free Text Annotations"},{"path":"/forms/e9a480caa90d22e4607f84a5a1ae20c8.xml","id":"9404faa0ce04777c6dc4a51fbdf44612","answerData":{"iW_free_audio":"audio.wav"},"namespace":"iWitness Free Audio Annotation"}]},{"timestamp":1374608254396,"id":"cc18b2189f4afe348d607a2c72040f87","index":0,"regionBounds":{"startTime":-1,"displayTop":74,"height":216,"width":256,"displayLeft":223,"left":256,"endTime":-1,"displayWidth":256,"top":216,"displayHeight":216},"associatedForms":[]},{"timestamp":1374608296391,"id":"2a5d901a22c640ae6c529649ead29c38","index":1,"regionBounds":{"startTime":-1,"displayTop":362,"height":216,"width":256,"displayLeft":719,"left":256,"endTime":-1,"displayWidth":256,"top":216,"displayHeight":216},"associatedForms":[{"path":"/forms/46b9f8e70113ae0f39ae26338c0dc433.xml","id":"2891bede2c671d90af481c431d3bf371","answerData":{"iW_individual_identifiers":"4","iW_name":"street sign"},"namespace":"iWitness v 1.0"}]}],"sensorCapture":[{"timestamp":1374607948451,"sensorPlayback":{"acc_z":7.0772600173950195,"roll":-48.119998931884766,"azimuth":-9.059999465942383,"lightMeterValue":3104,"pitch":5.519999980926514,"acc_y":-0.3256114423274994,"acc_x":6.761225700378418},"captureType":271},{"timestamp":1374607947452,"sensorPlayback":{"acc_z":9.08838939666748,"roll":-49.02000045776367,"azimuth":-7.739999771118164,"lightMeterValue":2846,"pitch":6.059999942779541,"acc_y":-0.2777273952960968,"acc_x":4.405331134796143},"captureType":271},{"timestamp":1374607962793,"sensorPlayback":{"acc_z":2.806004285812378,"roll":-17.81999969482422,"acc_y":-0.13407529890537262,"bluetoothDeviceAddress":"00:05:4F:F9:8A:EA","acc_x":8.312667846679688,"bluetoothDeviceName":"nuvi #3835095981","azimuth":-47.939998626708984,"lightMeterValue":1537,"pitch":6.71999979019165},"captureType":271},{"timestamp":1374607956793,"sensorPlayback":{"acc_z":3.5625722408294678,"roll":-29.8799991607666,"azimuth":-40.07999801635742,"lightMeterValue":2574,"pitch":9.420000076293945,"acc_y":-0.5937620401382446,"acc_x":8.944737434387207},"captureType":271},{"timestamp":1374607958790,"sensorPlayback":{"acc_z":3.1028854846954346,"roll":-31.260000228881836,"azimuth":-40.02000045776367,"lightMeterValue":2140,"pitch":8.039999961853027,"acc_y":0.3447650372982025,"acc_x":8.705317497253418},"captureType":271},{"timestamp":1374607946477,"sensorPlayback":{"acc_z":8.20732307434082,"roll":-49.86000061035156,"azimuth":-2.6399998664855957,"lightMeterValue":3739,"pitch":10.260000228881836,"acc_y":0.06703764945268631,"acc_x":5.037400245666504},"captureType":271},{"timestamp":1374607972792,"sensorPlayback":{"acc_z":7.95832633972168,"roll":-48.779998779296875,"azimuth":-15.299999237060547,"lightMeterValue":2464,"pitch":7.37999963760376,"acc_y":-0.7182605266571045,"acc_x":6.14831018447876},"captureType":271},{"timestamp":1374607951776,"sensorPlayback":{"acc_z":2.078166961669922,"roll":-29.459999084472656,"gps_coords":"[40.71170450874291,-73.96490447531804]","acc_y":-0.31603461503982544,"acc_x":8.877699851989746,"azimuth":-40.07999801635742,"lightMeterValue":2351,"pitch":9.84000015258789},"captureType":271},{"timestamp":1374607969800,"sensorPlayback":{"acc_z":7.0772600173950195,"roll":-47.939998626708984,"azimuth":-18.299999237060547,"lightMeterValue":1970,"pitch":7.37999963760376,"acc_y":-0.8427590131759644,"acc_x":7.220912456512451},"captureType":271},{"timestamp":1374607954791,"sensorPlayback":{"acc_z":3.026270866394043,"roll":-26.15999984741211,"azimuth":-43.31999969482422,"lightMeterValue":2432,"pitch":9.059999465942383,"acc_y":-0.35434186458587646,"acc_x":9.107542991638184},"captureType":271},{"timestamp":1374607970792,"sensorPlayback":{"acc_z":6.89530086517334,"roll":-47.57999801635742,"azimuth":-17.940000534057617,"pitch":7.37999963760376,"acc_y":-0.7757213711738586,"acc_x":6.9240312576293945},"captureType":271},{"timestamp":1374607961793,"sensorPlayback":{"acc_z":0.26815059781074524,"roll":-16.31999969482422,"gps_coords":"[40.711628443217535,-73.96483996865653]","acc_y":0.028730420395731926,"acc_x":9.27034854888916,"azimuth":-48.36000061035156,"cellTowerId":"25363","lightMeterValue":1625,"pitch":7.079999923706055},"captureType":271},{"timestamp":1374607968796,"sensorPlayback":{"acc_z":6.8378400802612305,"roll":-48.84000015258789,"azimuth":-16.920000076293945,"lightMeterValue":1887,"pitch":7.199999809265137,"acc_y":-0.9289502501487732,"acc_x":6.339846134185791},"captureType":271},{"timestamp":1374607957791,"sensorPlayback":{"acc_z":3.6583402156829834,"roll":-31.85999870300293,"acc_y":-0.33518823981285095,"acc_x":8.762778282165527,"azimuth":-39.47999954223633,"lightMeterValue":2526,"pitch":8.760000228881836,"visibleWifiNetworks":[{"bssid":"58:6d:8f:ac:26:27","ssid":"SMKK_CONF"},{"bssid":"00:7f:28:70:6c:9f","ssid":"CT4GD"},{"bssid":"00:7f:28:8f:95:5f","ssid":"VXTBH"},{"bssid":"84:1b:5e:d7:3d:e1","ssid":"SMKK-2"},{"bssid":"20:e5:2a:7a:53:35","ssid":"ngHub_319331N501195"},{"bssid":"90:27:e4:5c:13:2d","ssid":"theefourfive"},{"bssid":"00:27:19:c1:f5:76","ssid":"Very Berry"},{"bssid":"00:7f:28:e2:09:46","ssid":"M6FYQ"},{"bssid":"00:0e:8f:7f:4e:e0","ssid":"iHub_00603503f025"},{"bssid":"f0:b4:79:00:79:5d","ssid":"sound"},{"bssid":"70:56:81:cb:9e:05","ssid":"AW TC Net"},{"bssid":"f8:e4:fb:14:61:e2","ssid":"8CSW3"},{"bssid":"00:1c:b3:af:12:db","ssid":"APNet"},{"bssid":"00:1e:52:7b:1f:3d","ssid":"Tanka"},{"bssid":"20:10:7a:8c:ef:70","ssid":"SBG658019"},{"bssid":"f8:e4:fb:06:67:a7","ssid":"458M2"},{"bssid":"f8:e4:fb:15:c2:e4","ssid":"GSH24"},{"bssid":"08:3e:8e:5d:03:ae","ssid":"DVW3201B40"},{"bssid":"20:aa:4b:12:6c:6c","ssid":"EcstaticGiraffe"},{"bssid":"84:1b:5e:39:2f:bd","ssid":"NETGEAR87"},{"bssid":"1c:af:f7:d7:27:0f","ssid":"109areaware"},{"bssid":"5c:96:9d:66:5e:71","ssid":"artMRKT"},{"bssid":"7c:d1:c3:af:16:d1","ssid":"casa da floresta"},{"bssid":"00:7f:28:55:bc:06","ssid":"ZYDY9"},{"bssid":"00:1f:90:ff:8e:8c","ssid":"7Z764"},{"bssid":"00:7f:28:e9:12:06","ssid":"CATCAVE"},{"bssid":"00:26:62:39:b0:42","ssid":"L6192"},{"bssid":"00:27:22:2a:9d:b6","ssid":"wifiNY.net"},{"bssid":"00:27:22:2a:9e:1a","ssid":"wifiNY.net"},{"bssid":"20:aa:4b:12:6c:6d","ssid":"EcstaticGiraffe-guest"}]},"captureType":271},{"timestamp":1374607949453,"sensorPlayback":{"acc_z":4.3191399574279785,"roll":-44.040000915527344,"azimuth":-19.5,"lightMeterValue":2241,"pitch":9,"acc_y":-0.5267243981361389,"acc_x":8.20732307434082},"captureType":271},{"timestamp":1374607967787,"sensorPlayback":{"acc_z":7.4316020011901855,"roll":-50.7599983215332,"azimuth":-12.65999984741211,"lightMeterValue":1823,"pitch":4.139999866485596,"acc_y":-0.5363011956214905,"acc_x":6.3973069190979},"captureType":271},{"timestamp":0,"sensorPlayback":{"acc_z":9.308655738830566,"roll":-50.459999084472656,"gps_coords":"[40.7117414385824,-73.96483999967323]","acc_y":4.156333923339844,"acc_x":0.6799532771110535,"azimuth":-15.299999237060547,"cellTowerId":"25363","lightMeterValue":3278,"pitch":-3.5399999618530273},"captureType":271},{"timestamp":1374607950453,"sensorPlayback":{"acc_z":3.9647979736328125,"roll":-35.15999984741211,"azimuth":-34.20000076293945,"lightMeterValue":2225,"pitch":10.019999504089355,"acc_y":-0.6416460275650024,"acc_x":8.65743350982666},"captureType":271},{"timestamp":1374607965794,"sensorPlayback":{"acc_z":10.802638053894043,"roll":-52.97999954223633,"azimuth":5.339999675750732,"pitch":3.7799999713897705,"acc_y":-0.4405331015586853,"acc_x":4.098873138427734},"captureType":271},{"timestamp":1374607964795,"sensorPlayback":{"acc_z":8.983044624328613,"roll":-50.87999725341797,"acc_y":-0.2298433631658554,"acc_x":4.290409564971924,"azimuth":-6.119999885559082,"lightMeterValue":3339,"pitch":3.5999999046325684,"visibleWifiNetworks":[{"bssid":"00:7f:28:70:6c:9f","ssid":"CT4GD"},{"bssid":"f8:e4:fb:14:61:e2","ssid":"8CSW3"}]},"captureType":271},{"timestamp":1374607973795,"sensorPlayback":{"acc_z":8.437167167663574,"roll":-51.89999771118164,"azimuth":-5.940000057220459,"lightMeterValue":2628,"pitch":1.9199999570846558,"acc_y":0.14365209639072418,"acc_x":5.9088897705078125},"captureType":271},{"timestamp":1374607953786,"sensorPlayback":{"acc_z":2.806004285812378,"roll":-27.119998931884766,"azimuth":-43.13999938964844,"lightMeterValue":2457,"pitch":8.9399995803833,"acc_y":-0.2298433631658554,"acc_x":9.02135181427002},"captureType":271},{"timestamp":1374607963794,"sensorPlayback":{"acc_z":8.130708694458008,"roll":-34.439998626708984,"azimuth":-32.34000015258789,"lightMeterValue":3158,"pitch":4.019999980926514,"acc_y":0.9768342971801758,"acc_x":2.2218191623687744},"captureType":271},{"timestamp":1374607944434,"sensorPlayback":{"acc_z":8.312667846679688,"roll":-51.84000015258789,"acc_y":0.26815059781074524,"acc_x":5.870582580566406,"azimuth":-10.139999389648438,"lightMeterValue":3721,"pitch":-1.0199999809265137,"visibleWifiNetworks":[{"bssid":"00:26:f3:31:ac:ca","ssid":"ACC8"}]},"captureType":271},{"timestamp":1374607975793,"sensorPlayback":{"acc_z":8.609549522399902,"roll":-52.73999786376953,"azimuth":0.6599999666213989,"lightMeterValue":2361,"pitch":-16.3799991607666,"acc_y":0.31603461503982544,"acc_x":4.395754337310791},"captureType":271},{"timestamp":1374607945427,"sensorPlayback":{"acc_z":9.433155059814453,"roll":-50.70000076293945,"azimuth":-2.3399999141693115,"lightMeterValue":3360,"pitch":7.619999885559082,"acc_y":-0.6703764796257019,"acc_x":4.912901878356934},"captureType":271},{"timestamp":1374607943373,"sensorPlayback":{"acc_z":9.241618156433105,"roll":-51.23999786376953,"bluetoothDeviceAddress":"00:05:4F:F9:8A:EA","acc_y":4.089296340942383,"acc_x":0.3926490843296051,"bluetoothDeviceName":"nuvi #3835095981","azimuth":-13.920000076293945,"lightMeterValue":3484,"pitch":-5.400000095367432},"captureType":271},{"timestamp":1374607959790,"sensorPlayback":{"acc_z":0.5841852426528931,"roll":-25.68000030517578,"azimuth":-43.73999786376953,"lightMeterValue":1033,"pitch":6.71999979019165,"acc_y":0.26815059781074524,"acc_x":9.567230224609375},"captureType":271},{"timestamp":1374607966795,"sensorPlayback":{"acc_z":7.843404769897461,"roll":-53.459999084472656,"azimuth":4.019999980926514,"lightMeterValue":3161,"pitch":2.819999933242798,"acc_y":0.2968810200691223,"acc_x":7.2113356590271},"captureType":271},{"timestamp":1374607942431,"sensorPlayback":{"acc_z":9.490615844726563,"roll":-50.21999740600586,"gps_coords":"[40.7117414385824,-73.96483999967323]","IMEI":"354269051124298","acc_y":4.156333923339844,"bluetoothDeviceAddress":"64:77:91:91:84:59","acc_x":0.181959331035614,"bluetoothDeviceName":"montgomery","azimuth":-16.3799991607666,"cellTowerId":"25363","lightMeterValue":3426,"pitch":-3.8399999141693115},"captureType":271},{"timestamp":1374607955792,"sensorPlayback":{"acc_z":2.9305028915405273,"roll":-27.18000030517578,"azimuth":-41.63999938964844,"lightMeterValue":2328,"pitch":9.179999351501465,"acc_y":-0.2585737705230713,"acc_x":9.02135181427002},"captureType":271},{"timestamp":1374607952789,"sensorPlayback":{"acc_z":2.8443117141723633,"roll":-28.139999389648438,"azimuth":-41.63999938964844,"lightMeterValue":2488,"pitch":8.819999694824219,"acc_y":-0.3256114423274994,"acc_x":9.069235801696777},"captureType":271},{"timestamp":1374607974794,"sensorPlayback":{"acc_z":8.705317497253418,"roll":-52.86000061035156,"azimuth":-2.1599998474121094,"pitch":-10.979999542236328,"acc_y":-0.15322890877723694,"acc_x":4.941632270812988},"captureType":271},{"timestamp":1374607960798,"sensorPlayback":{"acc_z":0.35434186458587646,"roll":-17.399999618530273,"azimuth":-48.599998474121094,"lightMeterValue":1592,"pitch":7.079999923706055,"acc_y":0.07661445438861847,"acc_x":9.279925346374512},"captureType":271},{"timestamp":1374607971794,"sensorPlayback":{"acc_z":6.952761650085449,"roll":-48.18000030517578,"gps_coords":"[40.711571601018775,-73.9647071158472]","acc_y":-0.9097966551780701,"acc_x":7.029376029968262,"azimuth":-17.219999313354492,"lightMeterValue":1913,"pitch":7.559999942779541},"captureType":271}]},"intent":{"ownershipType":400,"intendedDestination":"International Bar Association"},"genealogy":{"localMediaPath":"/4f06132d68613db8725142ac1cf4b4fff405a945","dateCreated":1374608149,"hashes":["d42b4ff9edea6dcf5a4f7fef9070f800"]}};
+
+// j3m json coverted to the tree format <- for display only, loses original structure
+var jsonData = {"d3DisplayName" : "j3m : ", "children" :convertToTree(_jsonData)};
+initTree(jsonData);
+
+function TodoCtrl($scope) {
+	var _keyWords = new Array(); 
+	extractKeywords(_jsonData,keyword_container_elements,0,_keyWords);
+	$scope.j3mContent =  _keyWords;
+};
+
+
+
+var downloadOptions = (function() {	
+		$("#all").append(
+			$(document.createElement('div'))
+				.append(
+					$(document.createElement('a'))
+						.html("Download J3M Metadata")
+						.attr({
+							'class':'ic_button',
+							'href': 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(_jsonData)),
+							'target' : '_blank',
+							'download' : "example.j3m"
+						})
+	
+				)
+				.append(
+					$(document.createElement('a'))
+						.html("Download J3M as CSV")
+						.attr({
+							'class':'ic_button',
+							'href': 'data:text/plain;charset=utf-8,' + encodeURIComponent(toCSV(_jsonData)),
+							'target' : '_blank',
+							'download' : "example.csv"
+						})
+	
+				).append(
+					$(document.createElement('a'))
+						.html("Download J3M as TSV")
+						.attr({
+							'class':'ic_button',
+							'href': 'data:text/plain;charset=utf-8,' + encodeURIComponent(toTSV(_jsonData)),
+							'target' : '_blank',
+							'download' : "example.tsv"
+						})
+	
+
+				).append(
+					$(document.createElement('a'))
+						.html("Download J3M as HTML")
+						.attr({
+							'class':'ic_button',
+							'href': 'data:text/plain;charset=utf-8,' + encodeURIComponent(toHTMLWrapper(_jsonData)),
+							'target' : '_blank',
+							'download' : "example.htm"
+						})
+	
+				)
+				
+		);
+	});
+	
+	downloadOptions();
+
+    </script>  
+  </body>
+</html>
